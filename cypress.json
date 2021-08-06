@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://novel.dek-d.com/",
+  "baseUrl": "http://localhost:3000/",
   "pluginsFile": "tests/e2e/plugins/index.js",
-  "projectId": "w6tbr7"
+  "projectId": "wx8xns"
 }

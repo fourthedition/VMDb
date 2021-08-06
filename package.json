@@ -3,7 +3,7 @@
   "scripts": {
     "serve": "vite preview",
     "build": "vite build",
-    "test:e2e": "vue-cli-service test:e2e",
+    "cypress:open": "cypress open",
     "lint": "vue-cli-service lint",
     "dev": "vite"
   },
