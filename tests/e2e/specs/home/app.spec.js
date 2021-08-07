@@ -19,19 +19,19 @@ describe('My First Test', () => {
     })
   })
   it('ดูหน้า IMDb Page', () => {
-    cy.get('#homepage1').click()
+    cy.get('a#homepage1').click()
   })
   it('ดูหน้า Oficial Page', () => {
-    cy.get('#homepage2').click()
+    cy.get('a#homepage2').click()
   })
   it('ดูหน้า Facebook Page', () => {
-    cy.get('#homepage3').click()
+    cy.get('a#homepage3').click()
   })
   it('ดูหน้า Twitter Page', () => {
-    cy.get('#homepage4').click()
+    cy.get('a#homepage4').click()
   })
   it('ดูหน้า Instragram Page', () => {
-    cy.get('#homepage5').click()
+    cy.get('a#homepage5').click()
   })
   it('ตรวจสอบข้อมูลว่าออกมาครบ', () => {
     cy.get('.cast__item').should('have.length', 12).each(($li, index) => {
