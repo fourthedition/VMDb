@@ -36,8 +36,7 @@
         </div>
 
         <div class="hero__genres">
-          <a
-            href="#"
+          <span
             class="hero__genre"
             :alt="genre.name"
             :title="genre.name"
@@ -45,7 +44,7 @@
             :key="genre.id"
           >
             {{ genre.name }}
-          </a>
+          </span>
         </div>
       </div>
 
@@ -65,6 +64,7 @@
             v-if="apiData.homepage"
             :href="`${apiData.homepage}`"
             class="hero__social"
+            id="homepage1"
             target="_blank"
             :title="apiData.homepage"
           >
@@ -89,6 +89,7 @@
             :href="`https://imdb.com/title/${apiData.external_ids.imdb_id}`"
             target="_blank"
             class="hero__social"
+            id="homepage2"
             alt="IMDB"
             title="IMDB"
           >
@@ -112,6 +113,7 @@
             :href="`https://facebook.com/${apiData.external_ids.facebook_id}`"
             target="_blank"
             class="hero__social"
+            id="homepage3"
             alt="Facebook"
             title="Facebook"
           >
@@ -135,6 +137,7 @@
             :href="`https://twitter.com/${apiData.external_ids.twitter_id}`"
             target="_blank"
             class="hero__social"
+            id="homepage4"
             alt="Twitter"
             title="Twitter"
           >
@@ -158,6 +161,7 @@
             :href="`https://instagram.com/${apiData.external_ids.instagram_id}`"
             target="_blank"
             class="hero__social"
+            id="homepage5"
             alt="Instagram"
             title="Instagram"
           >
@@ -247,30 +251,30 @@
 </template>
 
 <script>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref } from "vue";
 
 export default {
-  props: ['id'],
-  setup (props) {
-    const apiData = ref([])
-    const apikey = import.meta.env.VITE_KEY
+  props: ["id"],
+  setup(props) {
+    const apiData = ref([]);
+    const apikey = import.meta.env.VITE_KEY;
 
-    async function fetchApiData () {
+    async function fetchApiData() {
       await fetch(
         `https://api.themoviedb.org/3/movie/${props.id}?api_key=${apikey}&append_to_response=similar_movies,credits,external_ids`
       )
         .then((res) => res.json())
         .then((data) => {
-          apiData.value = data
-        })
+          apiData.value = data;
+        });
     }
 
-    onMounted(fetchApiData())
+    onMounted(fetchApiData());
     return {
-      apiData
-    }
-  }
-}
+      apiData,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
