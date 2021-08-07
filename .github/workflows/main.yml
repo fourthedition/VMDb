@@ -13,5 +13,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          serve: yarn serve
+          browser: yarn serve
           start: npx run cypress:open
